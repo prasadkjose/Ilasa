@@ -4,6 +4,7 @@
   "description": "test app",
   "main": "app.js",
   "dependencies": {
+    "npm": "^3.10.7",
     "handlebars": "^4.0.11",
     "lodash": "^4.17.4",
     "node-red": "^0.17.5",
