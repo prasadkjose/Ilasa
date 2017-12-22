@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{{pageTitle}}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <link rel="stylesheet" href="main.css">
+    <script type="application/javascript">
+
+    </script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-default container-fluid" style="width: 100%;">
+        <div class="container-fluid" style="width: 100%;">
+            <div class="navbar-header">
+              <img src="logo.png" class="navbar-brand logo">
+                <p class="navbar-brand title " style="color: #6A8B3B;">Intelligent Logistics Allocation System Application</p>
+            </div>
+        </div>
+    </nav>
+    <div class="body1 container">
+        <form class="c" style="font-size: 25px;">
+            <fieldset style="text-align: center;">
+                <hr>
+                <p id="m">
+                    <label>Box Size:   </label>
+                    <select id="myList" style="background: lightgray; color: #2b2b2b;border: 0.5px #6A8B3B solid;">
+               <option value = "1">one</option>
+               <option value = "2">two</option>
+               <option value = "3">three</option>
+               <option value = "4">four</option>
+                 <option value = "5">five</option>
+               <option value = "6">six</option>
+               <option value = "7">seven</option>
+                 <option value ="8">eight</option>
+               <option value = "9">nine</option>
+               <option value = "10">ten</option>
+                 <option value = "11">eleven</option>
+               <option value = "12">twelve</option>
+               <option value = "13">thirteen</option>
+                 <option value = "14">fouteen</option>
+                 <option value = "15">fifteen</option>
+               <option value = "16">sixteen</option>
+               <option value = "17">seventeen</option>
+                 <option value = "18">eighteen</option>
+                 <option value = "19">nineteen</option>
+             </select>
+                </p>
+                <hr style="width: 40%"><label style="padding-right: 20px;"> Box No.</label><input  max="1000" value="0" type="number"id="value">
+                <input type="range" min="0" max="1000" value="0" class="slider" id="No" style="width: 50%; margin: 0 auto; margin-top: 30px;">
+            </fieldset>
+            <script>
+                var slider = document.getElementById("No");
+                var output = document.getElementById("value");
+                output.innerHTML = slider.value;
+                var i=0;
+                slider.oninput = function() {
+                    output.value = this.value;
+                }
+                output.oninput=function(){
+                    slider.value= this.value;
+                }
+                function cal(){
+                var e=0;
+                var a= slider.value;
+                var b= parseInt(a/40);
+                var d=parseInt(b);
+                var c= a-(d*40);
+                if(c>20){
+                    d=d+1;
+                }
+                if(c<=20 && c!=0){
+                    e=e+1;
+                }
+                document.getElementById("result").style.display='inline';
+                var space= "<br><span id='trucks'><div style='font-size; 40px;'>";
+                    document.getElementById("ans").innerHTML=space;
+                if(a>20)
+                    document.getElementById("ans").innerHTML=document.getElementById("ans").innerHTML+d+" X <img src='40ft..jpg' style='width:120px; height:90px;'><br>";
+                if(e==1){
+                    document.getElementById("ans").innerHTML=document.getElementById("ans").innerHTML+"1 X <img src='20ft..jpg' style='width:120px; height:90px;'><br>";
+                }
+                document.getElementById("ans").innerHTML=document.getElementById("ans").innerHTML+'</div>';
+                }
+                function add(){
+                    var x = document.getElementById("myList");
+                    var U = x.options[x.selectedIndex].text;
+                    var num = document.getElementById("value").value;
+                    if(num!=0){
+                     document.getElementById("rec").style.display='inline';
+                    var y=document.getElementById('enterec').insertRow(-1);
+                    var c1=y.insertCell(0);
+                    var c2=y.insertCell(1);
+                    c1.innerHTML=U;
+                    c2.innerHTML=num;
+                    }
+                }
+            </script>
+            <hr style="width: 40%">
+        </form>
+         <button class="a" onclick="add();">ADD</button> <button class="a" style="margin-left: 10%;" onclick="cal();">Calculate</button>
+
+<hr>
+  <div class="row">
+        <div class="container col-md-6 " id="rec">
+
+          <br><br><br>
+    <table id="enterec">
+        <tr><th class="head"> Box Category</th><th class="head"> No. of box</th></tr>
+    </table>
+    </div>
+
+        <div class="container col-md-6">
+            <p id="result">
+                The containers recommended are:<span id="ans"></span>
+            </p>
+        </div>
+    </div>
+  </div>
+
+
+
+
+</body>
+
+</html>
