@@ -57,136 +57,149 @@
             </div>
         </div>
     </nav>
-    <div class="body1 container">
-        <form class="c" style="font-size: 25px;">
-            <fieldset style="text-align: center;">
-                <hr>
-                <p id="m">
-                    <label>Box Size:   </label>
-                    <select id="myList" style="background: lightgray; color: #2b2b2b;border: 0.5px #6A8B3B solid;">
-               <option value = "0">C1310</option>
-                <option value = "1">1/2 U Box</option>
-               <option value = "2">P-Box</option>
-               <option value = "3">U-box</option>
-               <option value = "4">S-Box</option>
-                 <option value = "5">F1 without pallet</option>
-               <option value = "6">K-Box</option>
-               <option value = "7">F1+ With out Pallet</option>
-                 <option value ="8">F1+ </option>
-               <option value = "9">F2-With out Pallet</option>
-               <option value = "10">F2</option>
-                 <option value = "11">C495-With out Pallet</option>
-                <option value="21">C495</option>
-               <option value = "12">F2+-With out Pallet</option>
-               <option value = "13">F2+</option>
-                 <option value = "14">F3-With out Pallet</option>
-                 <option value = "15">F3</option>
-               <option value = "16">1/2 High with out Pallet</option>
-               <option value = "17">1/2 High</option>
-                 <option value = "18">C990L</option>
-                 <option value = "19">C870-NEW</option>
-                <option value = "20">C990</option>
-             </select>
-                </p>
-                <hr style="width: 40%"><span style="margin-right: 26%;"><label style="padding-right: 20px;"> Box No.</label><input  max="1000" value="0" type="number"id="value"></span>
-                <input type="range" min="0" max="1000" value="0" class="slider" id="No" style="width: 50%; margin: 0 auto; margin-top: 30px;">
-                <label style="margin-right: 28%;">Truck selection</label><br><input style="margin-left: 10%;" type="checkbox" name="tchk" id="20ftchk" value=26756075.5>20 Feet Truck<br>
-                <input type="checkbox" name="tchk" id="40ftchk" style="margin-left: 10%" value=53994405.6>40 Feet Truck<br>
+    <div class="body1 container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <form class="c" style="font-size: 25px;">
+              <fieldset style="text-align: center;">
+                  <hr>
+                  <p id="m">
+                      <label>Box Size :   </label>
+                      <select id="myList" style="background: lightgray; color: #2b2b2b;border: 0.5px #6A8B3B solid;">
+                 <option value = "0">C1310</option>
+                  <option value = "1">1/2 U Box</option>
+                 <option value = "2">P-Box</option>
+                 <option value = "3">U-box</option>
+                 <option value = "4">S-Box</option>
+                   <option value = "5">F1 without pallet</option>
+                 <option value = "6">K-Box</option>
+                 <option value = "7">F1+ With out Pallet</option>
+                   <option value ="8">F1+ </option>
+                 <option value = "9">F2-With out Pallet</option>
+                 <option value = "10">F2</option>
+                   <option value = "11">C495-With out Pallet</option>
+                  <option value="21">C495</option>
+                 <option value = "12">F2+-With out Pallet</option>
+                 <option value = "13">F2+</option>
+                   <option value = "14">F3-With out Pallet</option>
+                   <option value = "15">F3</option>
+                 <option value = "16">1/2 High with out Pallet</option>
+                 <option value = "17">1/2 High</option>
+                   <option value = "18">C990L</option>
+                   <option value = "19">C870-NEW</option>
+                  <option value = "20">C990</option>
+               </select>
+                  </p>
+                  <hr style="width: 40%"><span style="margin-right: 26%;"><label style="padding-right: 20px;"> Enter the Number of Boxes</label><input  max="1000" value="0" type="number"id="value"></span>
+                  <input type="range" min="0" max="1000" value="0" class="slider" id="No" style="width: 50%; margin: 0 auto; margin-top: 30px;">
+  <hr style="width: 40%"><span style="margin-right: 26%;">
+                  <label style="margin-left: %;">Truck selection</label><br><input style="margin-left: 10%;" type="checkbox" name="tchk" id="20ftchk" value=26756075.5>      20 Feet Truck
+                  <input type="checkbox" name="tchk" id="40ftchk" style="margin-left: 10%" value=53994405.6>       40 Feet Truck
 
-                <script>
-                    var slider = document.getElementById("No");
-                    var output = document.getElementById("value");
-                    output.innerHTML = slider.value;
-                    var i = 0;
-                    slider.oninput = function() {
-                        output.value = this.value;
-                    }
-                    output.oninput = function() {
-                        slider.value = this.value;
-                    }
+                  <script>
+                      var slider = document.getElementById("No");
+                      var output = document.getElementById("value");
+                      output.innerHTML = slider.value;
+                      var i = 0;
+                      slider.oninput = function() {
+                          output.value = this.value;
+                      }
+                      output.oninput = function() {
+                          slider.value = this.value;
+                      }
 
-                    function cal() {
-                        var f1, f2;
-                        var t1 = document.getElementById('20ftchk').value,
-                            t2 = document.getElementById('40ftchk').value;
-                        var cboxes = document.getElementsByName('tchk');
-                        var a = b = d = c = e = 0;
-                        alert(buff);
-                        var a = buff;
-                        if (cboxes[0].checked && cboxes[1].checked) {
-                            var e = 0;
-                            var b = a / t2;
-                            var d = parseInt(b);
-                            var c = a - (d * t2);
-                            alert(c)
-                            if (c > t1) {
-                                d = d + 1;
-                            }
-                            if (c <= t1 && c != 0) {
-                                e = e + 1;
-                            }
-                        } else if (cboxes[0].checked) {
-                            e = Math.ceil(a / t1);
+                      function cal() {
+                          var f1, f2;
+                          var t1 = document.getElementById('20ftchk').value,
+                              t2 = document.getElementById('40ftchk').value;
+                          var cboxes = document.getElementsByName('tchk');
+                          var a = b = d = c = e = 0;
+                          alert( "Vol of boxes  :  " + buff);
+                          var a = buff;
+                          if (cboxes[0].checked && cboxes[1].checked) {
+                              var e = 0;
+                              var b = a / t2;
+                              var d = parseInt(b);
+                              var c = a - (d * t2);
+                              alert(c)
+                              if (c > t1) {
+                                  d = d + 1;
+                              }
+                              if (c <= t1 && c != 0) {
+                                  e = e + 1;
+                              }
+                          } else if (cboxes[0].checked) {
+                              e = Math.ceil(a / t1);
 
-                        } else if (cboxes[1].checked) {
-                            b = a / t2;
-                            d=Math.ceil(b);
-                        }
-                        document.getElementById("result").style.display = 'inline';
-                        var space = "<br><span id='trucks'><div style='font-size; 40px;'>";
-                        document.getElementById("ans").innerHTML = space;
-                        if (d >= 1)
-                            document.getElementById("ans").innerHTML = document.getElementById("ans").innerHTML + d + " X <img src='40ft..jpg' style='width:120px; height:90px;'><br>";
-                        if (e >= 1) {
-                            document.getElementById("ans").innerHTML = document.getElementById("ans").innerHTML + e + " X <img src='20ft..jpg' style='width:120px; height:90px;'><br>";
-                        }
-                        document.getElementById("ans").innerHTML = document.getElementById("ans").innerHTML + '</div>';
-                    }
+                          } else if (cboxes[1].checked) {
+                              b = a / t2;
+                              d=Math.ceil(b);
+                          }
+                          document.getElementById("result").style.display = 'inline';
+                          var space = "<br><span id='trucks'><div style='font-size; 40px;'>";
+                          document.getElementById("ans").innerHTML = space;
+                          if (d >= 1)
+                              document.getElementById("ans").innerHTML = document.getElementById("ans").innerHTML + d + " X <img src='40ft..jpg' style='width:120px; height:90px;'><br>";
+                          if (e >= 1) {
+                              document.getElementById("ans").innerHTML = document.getElementById("ans").innerHTML + e + " X <img src='20ft..jpg' style='width:120px; height:90px;'><br>";
+                          }
+                          document.getElementById("ans").innerHTML = document.getElementById("ans").innerHTML + '</div>';
+                      }
 
-                    function add() {
-                        var x = document.getElementById("myList");
-                        var U = x.options[x.selectedIndex].text;
-                        var num = document.getElementById("value").value;
-                        if (num != 0) {
-                            document.getElementById("rec").style.display = 'inline';
-                            var y = document.getElementById('enterec').insertRow(-1);
-                            var c1 = y.insertCell(0);
-                            var c2 = y.insertCell(1);
-                            c1.innerHTML = U;
-                            c2.innerHTML = num;
-                            buff += (num * box[x.selectedIndex]);
-                        }
-                    }
+                      function add() {
+                          var x = document.getElementById("myList");
+                          var U = x.options[x.selectedIndex].text;
+                          var num = document.getElementById("value").value;
+                          if (num != 0) {
+                              document.getElementById("rec").style.display = 'inline';
+                              var y = document.getElementById('enterec').insertRow(-1);
+                              var c1 = y.insertCell(0);
+                              var c2 = y.insertCell(1);
+                              c1.innerHTML = U;
+                              c2.innerHTML = num;
+                              buff += (num * box[x.selectedIndex]);
+                          }
+                      }
 
-                </script>
+                  </script>
 
-            </fieldset>
-        </form>
+              </fieldset>
+          </form>
+          <hr style="width: 40%">
+          <button class="a" style="margin-left: 30%;" onclick="add(); ">Add</button> <button class="a" style="margin-left: 10%;" onclick="cal();">Calculate</button>
 
-
-        <hr style="width: 40%">
-        <button class="a" onclick="add();">Add</button> <button class="a" style="margin-left: 10%;" onclick="cal();">Calculate</button>
-
-        <hr>
-        <div class="row">
-            <div class="container col-md-6 " id="rec">
-
-                <br><br><br>
-                <table id="enterec">
-                    <tr>
-                        <th class="head"> Box Category</th>
-                        <th class="head"> No. of box</th>
-                    </tr>
-                </table>
-            </div>
-
-            <div class="container col-md-6">
-                <p id="result">
-                    The containers recommended are:<span id="ans"></span>
-                </p>
-            </div>
+          <hr>
         </div>
-    </div>
+        <br />
+        <br />
+
+        <div class="col-md-6 well" >
+          <div class="row">
+              <div class="container  " id="rec">
+
+                  <br><br><br>
+                  <table id="enterec">
+                      <tr>
+                          <th class="head"> Box Category :</th>
+                          <th class="head"> No. of boxs  :</th>
+                      </tr>
+                  </table>
+              </div>
+     <hr style="width: 40%">
+              <div style="margin-left:20%;" class="container  ">
+                  <div id="result" >
+                      The containers recommended are:   <span id="ans"></span>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+
+        </div>
+      </div>
+
+
+
 
 
 
