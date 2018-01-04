@@ -16,13 +16,43 @@
 
     </script>
 
+ <link rel="stylesheet" href="main.css">
+    <script type="application/javascript">
+        var i = 0;
+        var buff = 0;
+        var box = [17];
+        box[0] = 127 * 72 * 57;
+        box[1] = 36 * 22 * 16;
+        box[2] = 44 * 36 * 10;
+        box[3] = 46 * 36 * 16;
+        box[4] = 46 * 36 * 38;
+        box[5] = 61 * 57 * 25;
+        box[6] = 46 * 36 * 61;
+        box[7] = 61 * 57 * 37;
+        box[8] = 61 * 57 * 37;
+        box[9] = 61 * 57 * 45;
+        box[10] = 61 * 57 * 45;
+        box[11] = 74 * 47 * 57;
+        box[21] = 72 * 45 * 57;
+        box[12] = 61 * 57 * 60;
+        box[13] = 61 * 57 * 60;
+        box[14] = 61 * 57 * 75;
+        box[15] = 61 * 57 * 75;
+        box[16] = 78 * 60 * 60;
+        box[17] = 78 * 60 * 60;
+        box[18] = 95 * 72 * 36;
+        box[19] = 83 * 72 * 57;
+        box[20] = 95 * 72 * 57;
+
+    </script>
+
 </head>
 
 <body>
     <nav class="navbar navbar-default container-fluid" style="width: 100%;">
         <div class="container-fluid" style="width: 100%;">
             <div class="navbar-header">
-              <img src="logo.png" class="navbar-brand logo">
+                <img src="logo.png" class="navbar-brand logo">
                 <p class="navbar-brand title " style="color: #6A8B3B;">Intelligent Logistics Allocation System Application</p>
             </div>
         </div>
@@ -34,98 +64,129 @@
                 <p id="m">
                     <label>Box Size:   </label>
                     <select id="myList" style="background: lightgray; color: #2b2b2b;border: 0.5px #6A8B3B solid;">
-               <option value = "1">one</option>
-               <option value = "2">two</option>
-               <option value = "3">three</option>
-               <option value = "4">four</option>
-                 <option value = "5">five</option>
-               <option value = "6">six</option>
-               <option value = "7">seven</option>
-                 <option value ="8">eight</option>
-               <option value = "9">nine</option>
-               <option value = "10">ten</option>
-                 <option value = "11">eleven</option>
-               <option value = "12">twelve</option>
-               <option value = "13">thirteen</option>
-                 <option value = "14">fouteen</option>
-                 <option value = "15">fifteen</option>
-               <option value = "16">sixteen</option>
-               <option value = "17">seventeen</option>
-                 <option value = "18">eighteen</option>
-                 <option value = "19">nineteen</option>
+               <option value = "0">C1310</option>
+                <option value = "1">1/2 U Box</option>
+               <option value = "2">P-Box</option>
+               <option value = "3">U-box</option>
+               <option value = "4">S-Box</option>
+                 <option value = "5">F1 without pallet</option>
+               <option value = "6">K-Box</option>
+               <option value = "7">F1+ With out Pallet</option>
+                 <option value ="8">F1+ </option>
+               <option value = "9">F2-With out Pallet</option>
+               <option value = "10">F2</option>
+                 <option value = "11">C495-With out Pallet</option>
+                <option value="21">C495</option>
+               <option value = "12">F2+-With out Pallet</option>
+               <option value = "13">F2+</option>
+                 <option value = "14">F3-With out Pallet</option>
+                 <option value = "15">F3</option>
+               <option value = "16">1/2 High with out Pallet</option>
+               <option value = "17">1/2 High</option>
+                 <option value = "18">C990L</option>
+                 <option value = "19">C870-NEW</option>
+                <option value = "20">C990</option>
              </select>
                 </p>
-                <hr style="width: 40%"><label style="padding-right: 20px;"> Box No.</label><input  max="1000" value="0" type="number"id="value">
+                <hr style="width: 40%"><span style="margin-right: 26%;"><label style="padding-right: 20px;"> Box No.</label><input  max="1000" value="0" type="number"id="value"></span>
                 <input type="range" min="0" max="1000" value="0" class="slider" id="No" style="width: 50%; margin: 0 auto; margin-top: 30px;">
-            </fieldset>
-            <script>
-                var slider = document.getElementById("No");
-                var output = document.getElementById("value");
-                output.innerHTML = slider.value;
-                var i=0;
-                slider.oninput = function() {
-                    output.value = this.value;
-                }
-                output.oninput=function(){
-                    slider.value= this.value;
-                }
-                function cal(){
-                var e=0;
-                var a= slider.value;
-                var b= parseInt(a/40);
-                var d=parseInt(b);
-                var c= a-(d*40);
-                if(c>20){
-                    d=d+1;
-                }
-                if(c<=20 && c!=0){
-                    e=e+1;
-                }
-                document.getElementById("result").style.display='inline';
-                var space= "<br><span id='trucks'><div style='font-size; 40px;'>";
-                    document.getElementById("ans").innerHTML=space;
-                if(a>20)
-                    document.getElementById("ans").innerHTML=document.getElementById("ans").innerHTML+d+" X <img src='40ft..jpg' style='width:120px; height:90px;'><br>";
-                if(e==1){
-                    document.getElementById("ans").innerHTML=document.getElementById("ans").innerHTML+"1 X <img src='20ft..jpg' style='width:120px; height:90px;'><br>";
-                }
-                document.getElementById("ans").innerHTML=document.getElementById("ans").innerHTML+'</div>';
-                }
-                function add(){
-                    var x = document.getElementById("myList");
-                    var U = x.options[x.selectedIndex].text;
-                    var num = document.getElementById("value").value;
-                    if(num!=0){
-                     document.getElementById("rec").style.display='inline';
-                    var y=document.getElementById('enterec').insertRow(-1);
-                    var c1=y.insertCell(0);
-                    var c2=y.insertCell(1);
-                    c1.innerHTML=U;
-                    c2.innerHTML=num;
+                <label style="margin-right: 28%;">Truck selection</label><br><input style="margin-left: 10%;" type="checkbox" name="tchk" id="20ftchk" value=26756075.5>20 Feet Truck<br>
+                <input type="checkbox" name="tchk" id="40ftchk" style="margin-left: 10%" value=53994405.6>40 Feet Truck<br>
+
+                <script>
+                    var slider = document.getElementById("No");
+                    var output = document.getElementById("value");
+                    output.innerHTML = slider.value;
+                    var i = 0;
+                    slider.oninput = function() {
+                        output.value = this.value;
                     }
-                }
-            </script>
-            <hr style="width: 40%">
+                    output.oninput = function() {
+                        slider.value = this.value;
+                    }
+
+                    function cal() {
+                        var f1, f2;
+                        var t1 = document.getElementById('20ftchk').value,
+                            t2 = document.getElementById('40ftchk').value;
+                        var cboxes = document.getElementsByName('tchk');
+                        var a = b = d = c = e = 0;
+                        alert(buff);
+                        var a = buff;
+                        if (cboxes[0].checked && cboxes[1].checked) {
+                            var e = 0;
+                            var b = a / t2;
+                            var d = parseInt(b);
+                            var c = a - (d * t2);
+                            alert(c)
+                            if (c > t1) {
+                                d = d + 1;
+                            }
+                            if (c <= t1 && c != 0) {
+                                e = e + 1;
+                            }
+                        } else if (cboxes[0].checked) {
+                            e = Math.ceil(a / t1);
+
+                        } else if (cboxes[1].checked) {
+                            b = a / t2;
+                            d=Math.ceil(b);
+                        }
+                        document.getElementById("result").style.display = 'inline';
+                        var space = "<br><span id='trucks'><div style='font-size; 40px;'>";
+                        document.getElementById("ans").innerHTML = space;
+                        if (d >= 1)
+                            document.getElementById("ans").innerHTML = document.getElementById("ans").innerHTML + d + " X <img src='40ft..jpg' style='width:120px; height:90px;'><br>";
+                        if (e >= 1) {
+                            document.getElementById("ans").innerHTML = document.getElementById("ans").innerHTML + e + " X <img src='20ft..jpg' style='width:120px; height:90px;'><br>";
+                        }
+                        document.getElementById("ans").innerHTML = document.getElementById("ans").innerHTML + '</div>';
+                    }
+
+                    function add() {
+                        var x = document.getElementById("myList");
+                        var U = x.options[x.selectedIndex].text;
+                        var num = document.getElementById("value").value;
+                        if (num != 0) {
+                            document.getElementById("rec").style.display = 'inline';
+                            var y = document.getElementById('enterec').insertRow(-1);
+                            var c1 = y.insertCell(0);
+                            var c2 = y.insertCell(1);
+                            c1.innerHTML = U;
+                            c2.innerHTML = num;
+                            buff += (num * box[x.selectedIndex]);
+                        }
+                    }
+
+                </script>
+
+            </fieldset>
         </form>
-         <button class="a" onclick="add();">ADD</button> <button class="a" style="margin-left: 10%;" onclick="cal();">Calculate</button>
 
-<hr>
-  <div class="row">
-        <div class="container col-md-6 " id="rec">
 
-          <br><br><br>
-    <table id="enterec">
-        <tr><th class="head"> Box Category</th><th class="head"> No. of box</th></tr>
-    </table>
-    </div>
+        <hr style="width: 40%">
+        <button class="a" onclick="add();">Add</button> <button class="a" style="margin-left: 10%;" onclick="cal();">Calculate</button>
 
-        <div class="container col-md-6">
-            <p id="result">
-                The containers recommended are:<span id="ans"></span>
-            </p>
+        <hr>
+        <div class="row">
+            <div class="container col-md-6 " id="rec">
+
+                <br><br><br>
+                <table id="enterec">
+                    <tr>
+                        <th class="head"> Box Category</th>
+                        <th class="head"> No. of box</th>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="container col-md-6">
+                <p id="result">
+                    The containers recommended are:<span id="ans"></span>
+                </p>
+            </div>
         </div>
     </div>
-  </div>
 
 
 
