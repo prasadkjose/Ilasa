@@ -141,5 +141,14 @@ tr, .head{
 .well
 {
   min-height: 60vh;
+  margin-left: 5%;
+  border: 0.5px #6A8B3B solid;
+  opacity: .2;
 
+
+}
+
+.c
+{
+  margin-left: 10%;
 }
