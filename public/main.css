@@ -28,7 +28,6 @@ html, body   {
 
 h1, h2, h3, h4, h5, h6 {
     color: #222;
-    font-weight: 600;
     line-height: 1.3;
 }
 
@@ -143,12 +142,12 @@ tr, .head{
   min-height: 60vh;
   margin-left: 5%;
   border: 0.5px #6A8B3B solid;
-  opacity: .2;
+   background-color: #FDFDFD;
 
 
 }
 
 .c
 {
-  margin-left: 10%;
+  margin-left: 15%;
 }
