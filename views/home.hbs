@@ -10,18 +10,17 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="icon" type="image/png" href="favi.png" />
 
-<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
     <link rel="stylesheet" href="main.css">
     <script type="application/javascript">
-
     </script>
 
- <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="main.css">
     <script type="application/javascript">
         var i = 0;
         var buff = 0;
-        var box = [17];
+        var box = [22];
         box[0] = 127 * 72 * 57;
         box[1] = 36 * 22 * 16;
         box[2] = 44 * 36 * 10;
@@ -44,7 +43,7 @@
         box[18] = 95 * 72 * 36;
         box[19] = 83 * 72 * 57;
         box[20] = 95 * 72 * 57;
-
+        var buff = 0;
     </script>
 
 </head>
@@ -59,14 +58,15 @@
         </div>
     </nav>
     <div class="body1 container-fluid">
-      <div class="row">
-        <div class="col-md-6">
-          <form class="c" style="font-size: 15px;">
-              <fieldset style="text-align: center;">
-                  <hr>
-                  <p style=" text-align: justify;"id="m">
-                      <label>Box Size   :   </label>
-                      <select id="myList" style="margin-left:3%; background: lightgray; color: #2b2b2b;border: 0.5px #6A8B3B solid;">
+        <div class="row">
+            <div class="col-md-6">
+                <form class="c" style="font-size: 15px;">
+                    <fieldset style="text-align: center;">
+                        <hr>
+                        <p style=" text-align: justify;" id="m">
+                            <textarea rows="4" cols="50" placeholder="Enter the excel data" id="texta"></textarea>
+                          <!--  <label>Box Size   :   </label>
+                            <select id="myList" style="margin-left:3%; background: lightgray; color: #2b2b2b;border: 0.5px #6A8B3B solid;">
                  <option value = "0">C1310  -  :|0.737|:</option>
                   <option value = "1">1/2 U Box  -  :|0.017|:</option>
                  <option value = "2">P-Box   -  :|0.022|:</option>
@@ -90,12 +90,13 @@
                    <option value = "19">C870-NEW  -  :|0.489|:</option>
                   <option value = "20">C990  -  :|0.557|:</option>
                </select>
-                  </p>
-                  <hr style="width: 40%"><span style="margin-right: 26%;"><label style="padding-right: 20px;"> Enter the Number of Boxes</label><input  max="1000" value="0" type="number"id="value"></span>
-                  <input type="range" min="0" max="1000" value="0" class="slider" id="No" style="width: 50%; margin: 0 auto; margin-top: 30px;">
-  <hr style="width: 40%"><span style="margin-right: 26%;">
-                  <label style="margin-left: %;">Truck selection</label><br><input style="margin-left:10%;" type="checkbox" name="tchk" id="20ftchk" value=26756075.5>      20 Feet Truck
-                  <input type="checkbox" name="tchk" id="40ftchk" style="margin-left: 10%" value=53994405.6>       40 Feet Truck
+                        </p>
+                        <hr style="width: 40%"><span style="margin-right: 26%;"><label style="padding-right: 20px;"> Enter the Number of Boxes</label><input  max="1000" value="0" type="number"id="value"></span>
+                        <input type="range" min="0" max="1000" value="0" class="slider" id="No" style="width: 50%; margin: 0 auto; margin-top: 30px;">
+                        <hr style="width: 40%"><span style="margin-right: 26%;">-->
+                        <hr style="width: 40%">
+                  <label style="margin-left: 10%;">Truck selection</label><br><input style="margin-left:10%;" type="checkbox" name="tchk" id="20ftchk" value=26756075.5>      20 Feet Truck
+                  <input type="checkbox" name="tchk" id="40ftchk" checked="checked" style="margin-left: 10%" value=53994405.6>       40 Feet Truck
 
                   <script>
                       var slider = document.getElementById("No");
@@ -108,7 +109,6 @@
                       output.oninput = function() {
                           slider.value = this.value;
                       }
-
                       function cal() {
                           var f1, f2;
                           var t1 = document.getElementById('20ftchk').value,
@@ -131,7 +131,6 @@
                               }
                           } else if (cboxes[0].checked) {
                               e = Math.ceil(a / t1);
-
                           } else if (cboxes[1].checked) {
                               b = a / t2;
                               d=Math.ceil(b);
@@ -146,9 +145,57 @@
                           }
                           document.getElementById("ans").innerHTML = document.getElementById("ans").innerHTML + '</div>';
                       }
-
                       function add() {
-                          var x = document.getElementById("myList");
+                          document.getElementById("addbut").disabled=true;
+                         var Count1 = [22];
+        for (var cri = 0; cri < 22; cri++) {
+            Count1[cri] = [0, 0];
+        }
+        Count1[0][0] = 0.737;
+        Count1[1][0] = 0.017;
+        Count1[2][0] = 0.022;
+        Count1[3][0] = 0.073;
+        Count1[4][0] = 0.073;
+        Count1[5][0] = 0.102;
+        Count1[6][0] = 0.114;
+        Count1[7][0] = 0.145;
+        Count1[8][0] = 0.193;
+        Count1[9][0] = 0.175;
+        Count1[10][0] = 0.223;
+        Count1[11][0] = 0.220;
+        Count1[12][0] = 0.230;
+        Count1[13][0] = 0.279;
+        Count1[14][0] = 0.284;
+        Count1[15][0] = 0.335;
+        Count1[16][0] = 0.310;
+        Count1[17][0] = 0.377;
+        Count1[18][0] = 0.399;
+        Count1[19][0] = 0.489;
+        Count1[20][0] = 0.557;
+        Count1[21][0] = 0.271;
+        Count1[0][1] = 0;
+        Count1[1][1] = 0;
+        Count1[2][1] = 0;
+        Count1[3][1] = 0;
+        Count1[4][1] = 0;
+        Count1[5][1] = 0;
+        Count1[6][1] = 0;
+        Count1[7][1] = 0;
+        Count1[8][1] = 0;
+        Count1[9][1] = 0;
+        Count1[10][1] = 0;
+        Count1[11][1] = 0;
+        Count1[12][1] = 0;
+        Count1[13][1] = 0;
+        Count1[14][1] = 0;
+        Count1[15][1] = 0;
+        Count1[16][1] = 0;
+        Count1[17][1] = 0;
+        Count1[18][1] = 0;
+        Count1[19][1] = 0;
+        Count1[20][1] = 0;
+        Count1[21][1] = 0;
+                           /*var x = document.getElementById("myList");
                           var U = x.options[x.selectedIndex].text;
                           var num = document.getElementById("value").value;
                           if (num != 0) {
@@ -159,15 +206,29 @@
                               c1.innerHTML = U;
                               c2.innerHTML = num;
                               buff += (num * box[x.selectedIndex]);
-                          }
-                      }
+                          } */
+                            var tda=document.getElementById("texta").value;
+                            var TDAR=tda.split("\n");
+                            for(var tdai=0;tdai<TDAR.length;tdai++){
+                                for(var tdaj=0;tdaj<22;tdaj++){
+                                   if(TDAR[tdai]==Count1[tdaj][0]){
+                                      Count1[tdaj][1]++;
+                                   }
+                                }
+                            }
 
+                            for(var tdaj=0;tdaj<22;tdaj++){
+                                if(Count1[tdaj][1]!=0){
+                                    buff+=(box[tdaj]*Count1[tdaj][1]);
+                                }
+                            }
+                      }
                   </script>
 
               </fieldset>
           </form>
           <hr style="width: 40%">
-          <button class="a" style="margin-left: 35%;" onclick="add(); ">Add</button> <button class="a" style="margin-left: 10%;" onclick="cal();">Calculate</button>
+          <button class="a" id="addbut" style="margin-left: 35%;" onclick="add(); ">Add</button> <button class="a" style="margin-left: 10%;" onclick="cal();">Calculate</button>
 
           <hr>
         </div>
@@ -176,8 +237,7 @@
 
         <div class="col-md-5 well" >
           <div class="row">
-              <div class="container  " id="rec">
-
+         <!--     <div class="container  " id="rec">
                   <br>
                   <table id="enterec">
                       <tr>
@@ -186,18 +246,19 @@
                       </tr>
                   </table>
               </div>
+            -->
      <hr style="width: 40%">
               <div style="margin-left:20%;" class="container  ">
                   <div id="result" >
                       The containers recommended are:   <span id="ans"></span>
-                  </div>
-              </div>
-          </div>
+            </div>
         </div>
+    </div>
+    </div>
 
 
-        </div>
-      </div>
+    </div>
+    </div>
 
 
 
