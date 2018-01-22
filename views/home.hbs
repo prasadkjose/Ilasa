@@ -64,7 +64,9 @@
                     <fieldset style="text-align: center;">
                         <hr>
                         <p style=" text-align: justify;" id="m">
-                            <textarea rows="4" cols="50" placeholder="Paste the excel data" id="texta"></textarea>
+                          <div class="">
+                            <textarea rows="4" cols="" placeholder="Paste the excel data" id="texta"></textarea>
+                          </div>
                           <!--  <label>Box Size   :   </label>
                             <select id="myList" style="margin-left:3%; background: lightgray; color: #2b2b2b;border: 0.5px #6A8B3B solid;">
                  <option value = "0">C1310  -  :|0.737|:</option>
@@ -95,8 +97,15 @@
                         <input type="range" min="0" max="1000" value="0" class="slider" id="No" style="width: 50%; margin: 0 auto; margin-top: 30px;">
                         <hr style="width: 40%"><span style="margin-right: 26%;">-->
                         <hr style="width: 40%">
-                  <label style="margin-left: 10%;">Truck selection</label><br><input style="margin-left:10%;" type="checkbox" name="tchk" id="20ftchk" value=26756075.5>      20 Feet Truck
-                  <input type="checkbox" name="tchk" id="40ftchk" checked="checked" style="margin-left: 10%" value=53994405.6>       40 Feet Truck
+                  <label style="margin-left: vw;">Truck selection</label><br><br>
+                  <div class="col-md-3 col-xs-1 col-md-offset-1 col-xs-offset-2">
+                    <input style="margin-left:10%;" type="checkbox" name="tchk" id="20ftchk" value=26756075.5>      20 Feet Truck
+
+                  </div>
+                  <div class="col-md-3 col-xs-1 col-md-offset-3 col-xs-offset-3">
+                    <input type="checkbox" name="tchk" id="40ftchk" checked="checked" style="margin-left: 10%" value=53994405.6>       40 Feet Truck
+
+                  </div>
 
                   <script>
                       var slider = document.getElementById("No");
@@ -228,8 +237,14 @@
               </fieldset>
           </form>
           <hr style="width: 40%">
-          <button class="a" id="addbut" style="margin-left: 50%;" onclick="add(); ">Confirm</button><br />
-           <button class="a" style="margin-left: 49%;" onclick="cal();">Calculate</button>
+          <div class="   col-xs-offset-1">
+            <button class="a" id="addbut" style="margin-left: 40%;" onclick="add(); ">Confirm</button><br />
+
+          </div>
+          <div class="   col-xs-offset-1">
+            <button class="a" style="margin-left: 39%;" onclick="cal();">Calculate</button>
+
+          </div>
 
           <hr>
         </div>
