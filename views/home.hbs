@@ -64,7 +64,7 @@
                     <fieldset style="text-align: center;">
                         <hr>
                         <p style=" text-align: justify;" id="m">
-                            <textarea rows="4" cols="50" placeholder="Enter the excel data" id="texta"></textarea>
+                            <textarea rows="4" cols="50" placeholder="Paste the excel data" id="texta"></textarea>
                           <!--  <label>Box Size   :   </label>
                             <select id="myList" style="margin-left:3%; background: lightgray; color: #2b2b2b;border: 0.5px #6A8B3B solid;">
                  <option value = "0">C1310  -  :|0.737|:</option>
@@ -115,14 +115,14 @@
                               t2 = document.getElementById('40ftchk').value;
                           var cboxes = document.getElementsByName('tchk');
                           var a = b = d = c = e = 0;
-                          alert( "Vol of boxes  :  " + buff);
+                      //    alert( "Vol of boxes  :  " + buff);
                           var a = buff;
                           if (cboxes[0].checked && cboxes[1].checked) {
                               var e = 0;
                               var b = a / t2;
                               var d = parseInt(b);
                               var c = a - (d * t2);
-                              alert(c)
+                            //  alert(c)
                               if (c > t1) {
                                   d = d + 1;
                               }
@@ -228,7 +228,8 @@
               </fieldset>
           </form>
           <hr style="width: 40%">
-          <button class="a" id="addbut" style="margin-left: 35%;" onclick="add(); ">Add</button> <button class="a" style="margin-left: 10%;" onclick="cal();">Calculate</button>
+          <button class="a" id="addbut" style="margin-left: 50%;" onclick="add(); ">Confirm</button><br />
+           <button class="a" style="margin-left: 49%;" onclick="cal();">Calculate</button>
 
           <hr>
         </div>
